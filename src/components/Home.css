@@ -1,0 +1,43 @@
+.Home {
+  height: 100%;
+  width: calc(100vw - 270px);
+  background-color: #03123b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeChild {
+  background-color: white;
+  width: 695px;
+  height: 386px;
+  padding: 25px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 28px;
+}
+
+.homeChild__img {
+  height: 218px;
+  width: 100%;
+  background-color: red;
+  border-radius: 8px;
+  background: url(https://hips.hearstapps.com/digitalspyuk.cdnds.net/15/50/1449498579-darth-vader-star-wars.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.homeChild__title {
+  color: #3b3f5c;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.homeChild__subtitle {
+  color: #3b3f5c;
+  font-size: 14px;
+}
