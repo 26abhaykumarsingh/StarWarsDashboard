@@ -1,0 +1,26 @@
+.Sidebar {
+  height: 100%;
+  width: 270px;
+  background-color: #03123b;
+  padding-top: 11px;
+}
+
+.logoContainer {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  margin-bottom: 30px;
+}
+
+.starWarsLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../assets/starwars-logo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 43px;
+  width: 50%;
+}

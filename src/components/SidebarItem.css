@@ -1,0 +1,26 @@
+.SidebarItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 6px;
+  height: 43px;
+  color: white;
+  padding: 0 25px;
+  margin: 15px 15px;
+  font-size: 0.9em;
+}
+
+.SidebarItem:hover {
+  background-color: #cb1a80;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.sidebarItemIcon {
+  color: white;
+}
