@@ -3,14 +3,12 @@ import "./Sidebar.css";
 import SidebarItem from "./SidebarItem";
 import { Link } from "react-router-dom";
 
-function Sidebar({ contentData, setContentData }) {
-  const [contentType, setContentType] = useState("");
-
+function Sidebar({ contentData, setContentData, contentType, setContentType }) {
   const fetchData = async (contentType) => {
     setContentType(contentType);
     const response = await fetch("https://swapi.dev/api/" + contentType);
     const responseData = await response.json();
-    console.log(responseData);
+    // console.log(responseData);
     setContentData(responseData);
   };
 
@@ -18,9 +16,9 @@ function Sidebar({ contentData, setContentData }) {
   //   fetchData(contentType);
   // }, []);
 
-  useEffect(() => {
-    console.log(contentType);
-  }, [contentType]);
+  // useEffect(() => {
+  //   console.log(contentType);
+  // }, [contentType]);
 
   return (
     <div className="Sidebar">

@@ -71,6 +71,7 @@
 .gridButton:hover {
   background-color: #f1f1f5;
   color: #696974;
+  cursor: pointer;
 }
 
 .selected {
@@ -109,13 +110,14 @@
   width: 100%;
   height: 200px;
   background-color: #03123b;
+  cursor: pointer;
 }
 
 .cardImg {
   height: 75%;
   width: 100%;
   border-radius: 8px;
-  background: url("https://picsum.photos/1280/720");
+  background: url("https://picsum.photos/640/480");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -240,6 +242,7 @@
   font-weight: 500;
   border-bottom: 1px solid white;
   position: relative;
+  cursor: pointer;
 }
 
 .listItemIcon {

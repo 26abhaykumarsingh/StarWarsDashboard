@@ -3,6 +3,8 @@
   width: 270px;
   background-color: #03123b;
   padding-top: 11px;
+  position: relative;
+  z-index: 1;
 }
 
 .logoContainer {

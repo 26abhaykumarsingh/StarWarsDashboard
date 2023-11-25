@@ -1,6 +1,7 @@
 import "./App.css";
 import Sidebar from "./components/Sidebar";
 import Home from "./components/Home";
+import Details from "./components/Details";
 import {
   BrowserRouter as Router,
   Route,
@@ -12,15 +13,41 @@ import { useState } from "react";
 import Content from "./components/Content";
 
 function App() {
+  const [contentType, setContentType] = useState("");
+
   const [contentData, setContentData] = useState(null);
+
+  const [selectedItemUrl, setSelectedItemUrl] = useState(null); //will have url of the item
+
+  const changeSelectedItemUrl = (url) => {
+    setSelectedItemUrl(url);
+  };
 
   return (
     <Router>
       <div className="App">
         <Sidebar
+          contentType={contentType}
+          setContentType={setContentType}
           contentData={contentData}
           setContentData={setContentData}
         ></Sidebar>
+        {/* {contentType === "Films" && (
+          <>
+            <Details
+              contentType={contentType}
+              selectedItem={selectedItem}
+              changeSelectedItem={changeSelectedItem}
+              contentData={contentData}
+            ></Details>
+          </>
+        )} */}
+        <Details
+          contentType={contentType}
+          selectedItemUrl={selectedItemUrl}
+          changeSelectedItemUrl={changeSelectedItemUrl}
+          contentData={contentData}
+        ></Details>
         {/* main */}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -31,6 +58,7 @@ function App() {
                 contentType={"Films"}
                 contentData={contentData}
                 setContentData={setContentData}
+                changeSelectedItemUrl={changeSelectedItemUrl}
               />
             }
           />
@@ -41,6 +69,7 @@ function App() {
                 contentType={"People"}
                 contentData={contentData}
                 setContentData={setContentData}
+                changeSelectedItemUrl={changeSelectedItemUrl}
               />
             }
           />
@@ -51,6 +80,7 @@ function App() {
                 contentType={"Planets"}
                 contentData={contentData}
                 setContentData={setContentData}
+                changeSelectedItemUrl={changeSelectedItemUrl}
               />
             }
           />
@@ -61,6 +91,7 @@ function App() {
                 contentType={"Species"}
                 contentData={contentData}
                 setContentData={setContentData}
+                changeSelectedItemUrl={changeSelectedItemUrl}
               />
             }
           />
@@ -71,6 +102,7 @@ function App() {
                 contentType={"Starships"}
                 contentData={contentData}
                 setContentData={setContentData}
+                changeSelectedItemUrl={changeSelectedItemUrl}
               />
             }
           />
@@ -81,6 +113,7 @@ function App() {
                 contentType={"Vehicles"}
                 contentData={contentData}
                 setContentData={setContentData}
+                changeSelectedItemUrl={changeSelectedItemUrl}
               />
             }
           />

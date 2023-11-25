@@ -1,0 +1,119 @@
+/* .hidden {
+  display: none;
+  visibility: hidden;
+} */
+
+.Details {
+  height: 100%;
+  width: 350px;
+  background-color: #03123b;
+  /* padding-top: 11px; */
+  position: absolute;
+  z-index: 3;
+  /* left: 0; */
+  /* border: 2px solid white; */
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  transform: translateX(0); /* Initial position outside the viewport */
+  transition: transform 0.5s ease; /* Apply a shorter transition duration */
+}
+
+.Details.hidden {
+  transform: translateX(-350px); /* Position the details in view */
+}
+
+.Details.notHidden {
+  transform: translateX(0); /* Position the details in view */
+}
+
+.Details::-webkit-scrollbar {
+  display: none;
+}
+
+.detailsHeading {
+  height: 50px;
+  width: 100%;
+  border-bottom: 1px solid white;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 30px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: space-between;
+  position: sticky;
+  top: 0px;
+  background-color: #03123b;
+}
+
+.detailsCrossBtn {
+  height: 29px;
+  width: 29px;
+  position: absolute;
+  right: 10px;
+
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.detailsCrossBtn:hover {
+  background-color: rgb(248, 249, 252, 20%);
+}
+
+.detailKey {
+  height: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 20px;
+  /* border: 1px solid white; */
+}
+
+.detailValue {
+  height: fit-content;
+  width: calc(100% - 40px);
+  background-color: white;
+  color: #252c32;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.closeBtnContainer {
+  height: 100px;
+  width: 100%;
+  position: sticky;
+  bottom: 0px;
+  border-top: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 7px;
+  padding-bottom: 19px;
+  background-color: #03123b;
+}
+
+.closeBtn {
+  height: 35px;
+  width: 100%;
+  background-color: #cb1a80;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

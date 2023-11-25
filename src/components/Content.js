@@ -5,13 +5,17 @@ import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
 import ReorderRoundedIcon from "@mui/icons-material/ReorderRounded";
 import MoreVertRoundedIcon from "@mui/icons-material/MoreVertRounded";
 
-function Content({ contentType, contentData, setContentData }) {
+function Content({
+  contentType,
+  contentData,
+  setContentData,
+  changeSelectedItemUrl,
+}) {
   const [view, setView] = useState("grid");
-  const [selectedItem, setSelectedItem] = useState("");
-  const changeSelectedItem = (identifier) => {};
+
   const changeView = (newView) => setView(newView);
   useEffect(() => {
-    console.log(view);
+    // console.log(view);
   }, [view]);
   return (
     <div className="Content">
@@ -48,7 +52,11 @@ function Content({ contentType, contentData, setContentData }) {
                 contentData.results.map((item) => {
                   if (contentType === "Films") {
                     return (
-                      <div className="card" key={item.title}>
+                      <div
+                        className="card"
+                        key={item.title}
+                        onClick={() => changeSelectedItemUrl(item.url)}
+                      >
                         <div className="cardImg"></div>
                         <div className="cardBottom">
                           <div className="cardIcon  filmsIcon"></div>
@@ -61,7 +69,11 @@ function Content({ contentType, contentData, setContentData }) {
                     );
                   } else if (contentType === "People") {
                     return (
-                      <div className="card" key={item.name}>
+                      <div
+                        className="card"
+                        key={item.name}
+                        onClick={() => changeSelectedItemUrl(item.url)}
+                      >
                         <div className="cardImg"></div>
                         <div className="cardBottom">
                           <div className="cardIcon  peopleIcon"></div>
@@ -74,7 +86,11 @@ function Content({ contentType, contentData, setContentData }) {
                     );
                   } else if (contentType === "Planets") {
                     return (
-                      <div className="card" key={item.name}>
+                      <div
+                        className="card"
+                        key={item.name}
+                        onClick={() => changeSelectedItemUrl(item.url)}
+                      >
                         <div className="cardImg"></div>
                         <div className="cardBottom">
                           <div className="cardIcon planetsIcon"></div>
@@ -87,7 +103,11 @@ function Content({ contentType, contentData, setContentData }) {
                     );
                   } else if (contentType === "Species") {
                     return (
-                      <div className="card" key={item.name}>
+                      <div
+                        className="card"
+                        key={item.name}
+                        onClick={() => changeSelectedItemUrl(item.url)}
+                      >
                         <div className="cardImg"></div>
                         <div className="cardBottom">
                           <div className="cardIcon speciesIcon"></div>
@@ -100,7 +120,11 @@ function Content({ contentType, contentData, setContentData }) {
                     );
                   } else if (contentType === "Starships") {
                     return (
-                      <div className="card" key={item.name}>
+                      <div
+                        className="card"
+                        key={item.name}
+                        onClick={() => changeSelectedItemUrl(item.url)}
+                      >
                         <div className="cardImg"></div>
                         <div className="cardBottom">
                           <div className="cardIcon starshipsIcon"></div>
@@ -113,7 +137,11 @@ function Content({ contentType, contentData, setContentData }) {
                     );
                   } else {
                     return (
-                      <div className="card" key={item.name}>
+                      <div
+                        className="card"
+                        key={item.name}
+                        onClick={() => changeSelectedItemUrl(item.url)}
+                      >
                         <div className="cardImg"></div>
                         <div className="cardBottom">
                           <div className="cardIcon vehiclesIcon"></div>
@@ -144,23 +172,35 @@ function Content({ contentType, contentData, setContentData }) {
                   {contentData &&
                     contentData.results.map((item) => {
                       return (
-                        <>
-                          <div className="listItemData listItemData1">
+                        <React.Fragment>
+                          <div
+                            className="listItemData listItemData1"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             <div className="filmsIcon listItemIcon"></div>
                             {item.title}
                           </div>
-                          <div className="listItemData listItemData2">
+                          <div
+                            className="listItemData listItemData2"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             {item.director}
                           </div>
-                          <div className="listItemData listItemData3">
+                          <div
+                            className="listItemData listItemData3"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             {item.created.slice(0, 4)}
                           </div>
-                          <div className="listItemData listItemData4">
+                          <div
+                            className="listItemData listItemData4"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             <div className="cardHamIcon listCardHamIcon">
                               <MoreVertRoundedIcon></MoreVertRoundedIcon>
                             </div>
                           </div>
-                        </>
+                        </React.Fragment>
                       );
                     })}
                 </>
@@ -181,17 +221,29 @@ function Content({ contentType, contentData, setContentData }) {
                     contentData.results.map((item) => {
                       return (
                         <>
-                          <div className="listItemData listItemData1">
+                          <div
+                            className="listItemData listItemData1"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             <div className="peopleIcon listItemIcon"></div>
                             {item.name}
                           </div>
-                          <div className="listItemData listItemData2">
+                          <div
+                            className="listItemData listItemData2"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             {item.gender}
                           </div>
-                          <div className="listItemData listItemData3">
+                          <div
+                            className="listItemData listItemData3"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             {item.skin_color}
                           </div>
-                          <div className="listItemData listItemData4">
+                          <div
+                            className="listItemData listItemData4"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             <div className="cardHamIcon listCardHamIcon">
                               <MoreVertRoundedIcon></MoreVertRoundedIcon>
                             </div>
@@ -217,17 +269,29 @@ function Content({ contentType, contentData, setContentData }) {
                     contentData.results.map((item) => {
                       return (
                         <>
-                          <div className="listItemData listItemData1">
+                          <div
+                            className="listItemData listItemData1"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             <div className="peopleIcon listItemIcon"></div>
                             {item.name}
                           </div>
-                          <div className="listItemData listItemData2">
+                          <div
+                            className="listItemData listItemData2"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             {item.diameter}
                           </div>
-                          <div className="listItemData listItemData3">
+                          <div
+                            className="listItemData listItemData3"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             {item.population}
                           </div>
-                          <div className="listItemData listItemData4">
+                          <div
+                            className="listItemData listItemData4"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             <div className="cardHamIcon listCardHamIcon">
                               <MoreVertRoundedIcon></MoreVertRoundedIcon>
                             </div>
@@ -253,17 +317,29 @@ function Content({ contentType, contentData, setContentData }) {
                     contentData.results.map((item) => {
                       return (
                         <>
-                          <div className="listItemData listItemData1">
+                          <div
+                            className="listItemData listItemData1"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             <div className="peopleIcon listItemIcon"></div>
                             {item.name}
                           </div>
-                          <div className="listItemData listItemData2">
+                          <div
+                            className="listItemData listItemData2"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             {item.classification}
                           </div>
-                          <div className="listItemData listItemData3">
+                          <div
+                            className="listItemData listItemData3"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             {item.language}
                           </div>
-                          <div className="listItemData listItemData4">
+                          <div
+                            className="listItemData listItemData4"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             <div className="cardHamIcon listCardHamIcon">
                               <MoreVertRoundedIcon></MoreVertRoundedIcon>
                             </div>
@@ -289,17 +365,29 @@ function Content({ contentType, contentData, setContentData }) {
                     contentData.results.map((item) => {
                       return (
                         <>
-                          <div className="listItemData listItemData1">
+                          <div
+                            className="listItemData listItemData1"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             <div className="peopleIcon listItemIcon"></div>
                             {item.name}
                           </div>
-                          <div className="listItemData listItemData2">
+                          <div
+                            className="listItemData listItemData2"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             {item.cost_in_credits}
                           </div>
-                          <div className="listItemData listItemData3">
+                          <div
+                            className="listItemData listItemData3"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             {item.model}
                           </div>
-                          <div className="listItemData listItemData4">
+                          <div
+                            className="listItemData listItemData4"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             <div className="cardHamIcon listCardHamIcon">
                               <MoreVertRoundedIcon></MoreVertRoundedIcon>
                             </div>
@@ -325,17 +413,29 @@ function Content({ contentType, contentData, setContentData }) {
                     contentData.results.map((item) => {
                       return (
                         <>
-                          <div className="listItemData listItemData1">
+                          <div
+                            className="listItemData listItemData1"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             <div className="peopleIcon listItemIcon"></div>
                             {item.name}
                           </div>
-                          <div className="listItemData listItemData2">
+                          <div
+                            className="listItemData listItemData2"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             {item.cost_in_credits}
                           </div>
-                          <div className="listItemData listItemData3">
+                          <div
+                            className="listItemData listItemData3"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             {item.model}
                           </div>
-                          <div className="listItemData listItemData4">
+                          <div
+                            className="listItemData listItemData4"
+                            onClick={() => changeSelectedItemUrl(item.url)}
+                          >
                             <div className="cardHamIcon listCardHamIcon">
                               <MoreVertRoundedIcon></MoreVertRoundedIcon>
                             </div>
