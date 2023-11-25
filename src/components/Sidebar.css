@@ -24,3 +24,21 @@
   height: 43px;
   width: 50%;
 }
+
+.Sidebar a {
+  color: inherit; /* Inherit the text color from the parent */
+  text-decoration: none; /* Remove the underline */
+}
+
+/* .active {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 6px;
+  height: 43px;
+  color: white;
+  padding: 0 25px;
+  margin: 15px 15px;
+  font-size: 0.9em;
+  background-color: #cb1a80;
+} */
