@@ -23,12 +23,14 @@
   transition: transform 0.5s ease; /* Apply a shorter transition duration */
 }
 
-.Details.hidden {
+.Details.outOfView {
   transform: translateX(-350px); /* Position the details in view */
+  transition: transform 0.5s ease;
 }
 
-.Details.notHidden {
+.Details.inView {
   transform: translateX(0); /* Position the details in view */
+  transition: transform 0.5s ease;
 }
 
 .Details::-webkit-scrollbar {

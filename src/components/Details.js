@@ -33,7 +33,7 @@ function Details({
   };
 
   return (
-    <div className={`Details ${!selectedItemUrl ? "hidden" : "notHidden"}`}>
+    <div className={`Details ${!selectedItemUrl ? "outOfView" : "inView"}`}>
       <div className="detailsHeading">
         {contentType.charAt(0).toUpperCase() +
           contentType.slice(1) +
