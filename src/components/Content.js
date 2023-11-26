@@ -4,22 +4,83 @@ import "./Content.css";
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
 import ReorderRoundedIcon from "@mui/icons-material/ReorderRounded";
 import MoreVertRoundedIcon from "@mui/icons-material/MoreVertRounded";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import Sidebar from "./Sidebar.js";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import { Link } from "react-router-dom";
 
 function Content({
   contentType,
+  setContentType,
   contentData,
   setContentData,
   changeSelectedItemUrl,
+  isMobileMenuOpen,
+  setIsMobileMenuOpen,
 }) {
   const [view, setView] = useState("grid");
 
   const changeView = (newView) => setView(newView);
+
   useEffect(() => {
-    // console.log(view);
-  }, [view]);
+    if (contentType == "Films") {
+      changeView("grid");
+    } else {
+      changeView("list");
+    }
+  }, [contentType]);
+
+  // mobile code
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 576);
+  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 576);
+      if (window.innerWidth > 576) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    // Attach the event listener
+    window.addEventListener("resize", handleResize);
+  }, []);
+
+  // useEffect(() => {}, [isMobile]);
+
   return (
     <div className="Content">
-      <div className="contentHeader"></div>
+      <div className={`mobileMenu ${!isMobileMenuOpen ? "hidden" : ""}`}>
+        <div
+          className="mobileMenuCrossBtn"
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          <CloseRoundedIcon></CloseRoundedIcon>
+        </div>
+        <Sidebar
+          setIsMobileMenuOpen={setIsMobileMenuOpen}
+          contentData={contentData}
+          setContentData={setContentData}
+          contentType={contentType}
+          setContentType={setContentType}
+        ></Sidebar>
+      </div>
+      <div className="contentHeader">
+        <div className={`mobileHeader ${!isMobile ? "hidden" : ""}`}>
+          <div
+            className="hamburgerIcon"
+            onClick={() => setIsMobileMenuOpen(true)}
+          >
+            <MenuRoundedIcon></MenuRoundedIcon>
+          </div>
+          <div
+            className="logoContainer--mobile"
+            onClick={() => setContentType("")}
+          >
+            <div className="starWarsLogo--mobile"></div>
+          </div>
+        </div>
+      </div>
       <div className="contentMain">
         <div className="contentMainTop">
           <div className="contentMainTitle">{contentType}</div>

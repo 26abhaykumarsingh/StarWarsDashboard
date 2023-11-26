@@ -9,7 +9,7 @@ import {
   Switch,
   Link,
 } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Content from "./components/Content";
 
 function App() {
@@ -19,6 +19,15 @@ function App() {
 
   const [selectedItemUrl, setSelectedItemUrl] = useState(null); //will have url of the item
 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const fetchData = async (contentType) => {
+    setContentType(contentType);
+    const response = await fetch("https://swapi.dev/api/" + contentType);
+    const responseData = await response.json();
+    setContentData(responseData);
+  };
+
   const changeSelectedItemUrl = (url) => {
     setSelectedItemUrl(url);
   };
@@ -27,6 +36,7 @@ function App() {
     <Router>
       <div className="App">
         <Sidebar
+          setIsMobileMenuOpen={setIsMobileMenuOpen}
           contentType={contentType}
           setContentType={setContentType}
           contentData={contentData}
@@ -50,15 +60,26 @@ function App() {
         ></Details>
         {/* main */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <Home
+                setIsMobileMenuOpen={setIsMobileMenuOpen}
+                fetchData={fetchData}
+              />
+            }
+          />
           <Route
             path="/films"
             element={
               <Content
                 contentType={"Films"}
+                setContentType={setContentType}
                 contentData={contentData}
                 setContentData={setContentData}
                 changeSelectedItemUrl={changeSelectedItemUrl}
+                isMobileMenuOpen={isMobileMenuOpen}
+                setIsMobileMenuOpen={setIsMobileMenuOpen}
               />
             }
           />
@@ -67,9 +88,12 @@ function App() {
             element={
               <Content
                 contentType={"People"}
+                setContentType={setContentType}
                 contentData={contentData}
                 setContentData={setContentData}
                 changeSelectedItemUrl={changeSelectedItemUrl}
+                isMobileMenuOpen={isMobileMenuOpen}
+                setIsMobileMenuOpen={setIsMobileMenuOpen}
               />
             }
           />
@@ -78,9 +102,12 @@ function App() {
             element={
               <Content
                 contentType={"Planets"}
+                setContentType={setContentType}
                 contentData={contentData}
                 setContentData={setContentData}
                 changeSelectedItemUrl={changeSelectedItemUrl}
+                isMobileMenuOpen={isMobileMenuOpen}
+                setIsMobileMenuOpen={setIsMobileMenuOpen}
               />
             }
           />
@@ -89,9 +116,12 @@ function App() {
             element={
               <Content
                 contentType={"Species"}
+                setContentType={setContentType}
                 contentData={contentData}
                 setContentData={setContentData}
                 changeSelectedItemUrl={changeSelectedItemUrl}
+                isMobileMenuOpen={isMobileMenuOpen}
+                setIsMobileMenuOpen={setIsMobileMenuOpen}
               />
             }
           />
@@ -100,9 +130,12 @@ function App() {
             element={
               <Content
                 contentType={"Starships"}
+                setContentType={setContentType}
                 contentData={contentData}
                 setContentData={setContentData}
                 changeSelectedItemUrl={changeSelectedItemUrl}
+                isMobileMenuOpen={isMobileMenuOpen}
+                setIsMobileMenuOpen={setIsMobileMenuOpen}
               />
             }
           />
@@ -111,9 +144,12 @@ function App() {
             element={
               <Content
                 contentType={"Vehicles"}
+                setContentType={setContentType}
                 contentData={contentData}
                 setContentData={setContentData}
                 changeSelectedItemUrl={changeSelectedItemUrl}
+                isMobileMenuOpen={isMobileMenuOpen}
+                setIsMobileMenuOpen={setIsMobileMenuOpen}
               />
             }
           />

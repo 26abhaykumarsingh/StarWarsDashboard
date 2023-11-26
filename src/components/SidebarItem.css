@@ -37,3 +37,11 @@
   font-size: 0.9em;
   background-color: #cb1a80;
 }
+
+/* media queries */
+
+@media only screen and (max-width: 700px) {
+  .SidebarItem {
+    padding: 0 15px;
+  }
+}
