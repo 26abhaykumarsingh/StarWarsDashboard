@@ -53,9 +53,7 @@ function Details({
               </React.Fragment>
             );
           }
-          return null; // Optional: If you want to filter out object values
         })}
-
       <div className="closeBtnContainer">
         <div className="closeBtn" onClick={() => closeDetails()}>
           Close

@@ -118,6 +118,10 @@
   cursor: pointer;
 }
 
+.closeBtn:hover {
+  transform: scale(1.01);
+}
+
 @media only screen and (max-width: 576px) {
   .Details {
     height: 100%;

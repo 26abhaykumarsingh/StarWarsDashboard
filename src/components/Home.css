@@ -9,6 +9,11 @@
   justify-content: center;
 }
 
+a {
+  color: inherit; /* Inherit the text color from the parent */
+  text-decoration: none; /* Remove the underline */
+}
+
 .homeChild {
   background-color: white;
   width: 695px;
@@ -77,6 +82,14 @@
     border-radius: 4px;
     color: white;
     background-color: rgba(192, 192, 192, 0.351);
+    transition: transform 0.1s ease;
+  }
+
+  .homeBtn:hover {
+    transform: scale(1.05);
+  }
+  .homeBtn:active {
+    transform: scale(1);
   }
 
   .homeBtnIcon {

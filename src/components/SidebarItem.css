@@ -8,10 +8,12 @@
   padding: 0 25px;
   margin: 15px 15px;
   font-size: 0.9em;
+  transition: background-color 0.4s ease-out 0.3s;
 }
 
 .SidebarItem:hover {
   background-color: #cb1a80;
+  transition: background-color 0.1s ease-in;
 }
 
 .rightSection {

@@ -220,68 +220,78 @@ function Content({
             <div className="contentMainCards--list">
               {contentType === "Films" && (
                 <>
-                  <div className="listHeaderHeading listHeaderHeading1">
-                    Name
+                  <div className="listHeaderHeadingRow">
+                    <div className="listHeaderHeading listHeaderHeading1">
+                      Name
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading2">
+                      Director
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading3">
+                      Release Date
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading4"></div>
                   </div>
-                  <div className="listHeaderHeading listHeaderHeading2">
-                    Director
-                  </div>
-                  <div className="listHeaderHeading listHeaderHeading3">
-                    Release Date
-                  </div>
-                  <div className="listHeaderHeading listHeaderHeading4"></div>
                   {contentData &&
                     contentData.results.map((item) => {
                       return (
-                        <React.Fragment>
+                        <div
+                          className="listItemDataRow"
+                          onClick={() => changeSelectedItemUrl(item.url)}
+                        >
                           <div
                             className="listItemData listItemData1"
-                            onClick={() => changeSelectedItemUrl(item.url)}
+                            // onClick={() => changeSelectedItemUrl(item.url)}
                           >
                             <div className="filmsIcon listItemIcon"></div>
                             {item.title}
                           </div>
                           <div
                             className="listItemData listItemData2"
-                            onClick={() => changeSelectedItemUrl(item.url)}
+                            // onClick={() => changeSelectedItemUrl(item.url)}
                           >
                             {item.director}
                           </div>
                           <div
                             className="listItemData listItemData3"
-                            onClick={() => changeSelectedItemUrl(item.url)}
+                            // onClick={() => changeSelectedItemUrl(item.url)}
                           >
                             {item.created.slice(0, 4)}
                           </div>
                           <div
                             className="listItemData listItemData4"
-                            onClick={() => changeSelectedItemUrl(item.url)}
+                            // onClick={() => changeSelectedItemUrl(item.url)}
                           >
                             <div className="cardHamIcon listCardHamIcon">
                               <MoreVertRoundedIcon></MoreVertRoundedIcon>
                             </div>
                           </div>
-                        </React.Fragment>
+                        </div>
                       );
                     })}
                 </>
               )}
               {contentType === "People" && (
                 <>
-                  <div className="listHeaderHeading listHeaderHeading1">
-                    Name
+                  <div className="listHeaderHeadingRow">
+                    <div className="listHeaderHeading listHeaderHeading1">
+                      Name
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading2">
+                      Gender
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading3">
+                      Species
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading4"></div>
                   </div>
-                  <div className="listHeaderHeading listHeaderHeading2">
-                    Gender
-                  </div>
-                  <div className="listHeaderHeading listHeaderHeading3">
-                    Species
-                  </div>
-                  <div className="listHeaderHeading listHeaderHeading4"></div>
                   {contentData &&
                     contentData.results.map((item) => {
                       return (
-                        <>
+                        <div
+                          className="listItemDataRow"
+                          onClick={() => changeSelectedItemUrl(item.url)}
+                        >
                           <div
                             className="listItemData listItemData1"
                             onClick={() => changeSelectedItemUrl(item.url)}
@@ -309,52 +319,59 @@ function Content({
                               <MoreVertRoundedIcon></MoreVertRoundedIcon>
                             </div>
                           </div>
-                        </>
+                        </div>
                       );
                     })}
                 </>
               )}
               {contentType === "Planets" && (
                 <>
-                  <div className="listHeaderHeading listHeaderHeading1">
-                    Name
+                  <div className="listHeaderHeadingRow">
+                    <div className="listHeaderHeading listHeaderHeading1">
+                      Name
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading2">
+                      Diameter
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading3">
+                      Population
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading4"></div>
                   </div>
-                  <div className="listHeaderHeading listHeaderHeading2">
-                    Diameter
-                  </div>
-                  <div className="listHeaderHeading listHeaderHeading3">
-                    Population
-                  </div>
-                  <div className="listHeaderHeading listHeaderHeading4"></div>
                   {contentData &&
                     contentData.results.map((item) => {
                       return (
                         <>
                           <div
-                            className="listItemData listItemData1"
+                            className="listItemDataRow"
                             onClick={() => changeSelectedItemUrl(item.url)}
                           >
-                            <div className="peopleIcon listItemIcon"></div>
-                            {item.name}
-                          </div>
-                          <div
-                            className="listItemData listItemData2"
-                            onClick={() => changeSelectedItemUrl(item.url)}
-                          >
-                            {item.diameter}
-                          </div>
-                          <div
-                            className="listItemData listItemData3"
-                            onClick={() => changeSelectedItemUrl(item.url)}
-                          >
-                            {item.population}
-                          </div>
-                          <div
-                            className="listItemData listItemData4"
-                            onClick={() => changeSelectedItemUrl(item.url)}
-                          >
-                            <div className="cardHamIcon listCardHamIcon">
-                              <MoreVertRoundedIcon></MoreVertRoundedIcon>
+                            <div
+                              className="listItemData listItemData1"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              <div className="peopleIcon listItemIcon"></div>
+                              {item.name}
+                            </div>
+                            <div
+                              className="listItemData listItemData2"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              {item.diameter}
+                            </div>
+                            <div
+                              className="listItemData listItemData3"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              {item.population}
+                            </div>
+                            <div
+                              className="listItemData listItemData4"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              <div className="cardHamIcon listCardHamIcon">
+                                <MoreVertRoundedIcon></MoreVertRoundedIcon>
+                              </div>
                             </div>
                           </div>
                         </>
@@ -364,45 +381,52 @@ function Content({
               )}
               {contentType === "Species" && (
                 <>
-                  <div className="listHeaderHeading listHeaderHeading1">
-                    Name
+                  <div className="listHeaderHeadingRow">
+                    <div className="listHeaderHeading listHeaderHeading1">
+                      Name
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading2">
+                      Classification
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading3">
+                      Language
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading4"></div>
                   </div>
-                  <div className="listHeaderHeading listHeaderHeading2">
-                    Classification
-                  </div>
-                  <div className="listHeaderHeading listHeaderHeading3">
-                    Language
-                  </div>
-                  <div className="listHeaderHeading listHeaderHeading4"></div>
                   {contentData &&
                     contentData.results.map((item) => {
                       return (
                         <>
                           <div
-                            className="listItemData listItemData1"
+                            className="listItemDataRow"
                             onClick={() => changeSelectedItemUrl(item.url)}
                           >
-                            <div className="peopleIcon listItemIcon"></div>
-                            {item.name}
-                          </div>
-                          <div
-                            className="listItemData listItemData2"
-                            onClick={() => changeSelectedItemUrl(item.url)}
-                          >
-                            {item.classification}
-                          </div>
-                          <div
-                            className="listItemData listItemData3"
-                            onClick={() => changeSelectedItemUrl(item.url)}
-                          >
-                            {item.language}
-                          </div>
-                          <div
-                            className="listItemData listItemData4"
-                            onClick={() => changeSelectedItemUrl(item.url)}
-                          >
-                            <div className="cardHamIcon listCardHamIcon">
-                              <MoreVertRoundedIcon></MoreVertRoundedIcon>
+                            <div
+                              className="listItemData listItemData1"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              <div className="peopleIcon listItemIcon"></div>
+                              {item.name}
+                            </div>
+                            <div
+                              className="listItemData listItemData2"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              {item.classification}
+                            </div>
+                            <div
+                              className="listItemData listItemData3"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              {item.language}
+                            </div>
+                            <div
+                              className="listItemData listItemData4"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              <div className="cardHamIcon listCardHamIcon">
+                                <MoreVertRoundedIcon></MoreVertRoundedIcon>
+                              </div>
                             </div>
                           </div>
                         </>
@@ -412,45 +436,52 @@ function Content({
               )}
               {contentType === "Starships" && (
                 <>
-                  <div className="listHeaderHeading listHeaderHeading1">
-                    Name
+                  <div className="listHeaderHeadingRow">
+                    <div className="listHeaderHeading listHeaderHeading1">
+                      Name
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading2">
+                      Cost in Credits
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading3">
+                      Model
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading4"></div>
                   </div>
-                  <div className="listHeaderHeading listHeaderHeading2">
-                    Cost in Credits
-                  </div>
-                  <div className="listHeaderHeading listHeaderHeading3">
-                    Model
-                  </div>
-                  <div className="listHeaderHeading listHeaderHeading4"></div>
                   {contentData &&
                     contentData.results.map((item) => {
                       return (
                         <>
                           <div
-                            className="listItemData listItemData1"
+                            className="listItemDataRow"
                             onClick={() => changeSelectedItemUrl(item.url)}
                           >
-                            <div className="peopleIcon listItemIcon"></div>
-                            {item.name}
-                          </div>
-                          <div
-                            className="listItemData listItemData2"
-                            onClick={() => changeSelectedItemUrl(item.url)}
-                          >
-                            {item.cost_in_credits}
-                          </div>
-                          <div
-                            className="listItemData listItemData3"
-                            onClick={() => changeSelectedItemUrl(item.url)}
-                          >
-                            {item.model}
-                          </div>
-                          <div
-                            className="listItemData listItemData4"
-                            onClick={() => changeSelectedItemUrl(item.url)}
-                          >
-                            <div className="cardHamIcon listCardHamIcon">
-                              <MoreVertRoundedIcon></MoreVertRoundedIcon>
+                            <div
+                              className="listItemData listItemData1"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              <div className="peopleIcon listItemIcon"></div>
+                              {item.name}
+                            </div>
+                            <div
+                              className="listItemData listItemData2"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              {item.cost_in_credits}
+                            </div>
+                            <div
+                              className="listItemData listItemData3"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              {item.model}
+                            </div>
+                            <div
+                              className="listItemData listItemData4"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              <div className="cardHamIcon listCardHamIcon">
+                                <MoreVertRoundedIcon></MoreVertRoundedIcon>
+                              </div>
                             </div>
                           </div>
                         </>
@@ -460,45 +491,52 @@ function Content({
               )}
               {contentType === "Vehicles" && (
                 <>
-                  <div className="listHeaderHeading listHeaderHeading1">
-                    Name
+                  <div className="listHeaderHeadingRow">
+                    <div className="listHeaderHeading listHeaderHeading1">
+                      Name
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading2">
+                      Cost in Credits
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading3">
+                      Model
+                    </div>
+                    <div className="listHeaderHeading listHeaderHeading4"></div>
                   </div>
-                  <div className="listHeaderHeading listHeaderHeading2">
-                    Cost in Credits
-                  </div>
-                  <div className="listHeaderHeading listHeaderHeading3">
-                    Model
-                  </div>
-                  <div className="listHeaderHeading listHeaderHeading4"></div>
                   {contentData &&
                     contentData.results.map((item) => {
                       return (
                         <>
                           <div
-                            className="listItemData listItemData1"
+                            className="listItemDataRow"
                             onClick={() => changeSelectedItemUrl(item.url)}
                           >
-                            <div className="peopleIcon listItemIcon"></div>
-                            {item.name}
-                          </div>
-                          <div
-                            className="listItemData listItemData2"
-                            onClick={() => changeSelectedItemUrl(item.url)}
-                          >
-                            {item.cost_in_credits}
-                          </div>
-                          <div
-                            className="listItemData listItemData3"
-                            onClick={() => changeSelectedItemUrl(item.url)}
-                          >
-                            {item.model}
-                          </div>
-                          <div
-                            className="listItemData listItemData4"
-                            onClick={() => changeSelectedItemUrl(item.url)}
-                          >
-                            <div className="cardHamIcon listCardHamIcon">
-                              <MoreVertRoundedIcon></MoreVertRoundedIcon>
+                            <div
+                              className="listItemData listItemData1"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              <div className="peopleIcon listItemIcon"></div>
+                              {item.name}
+                            </div>
+                            <div
+                              className="listItemData listItemData2"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              {item.cost_in_credits}
+                            </div>
+                            <div
+                              className="listItemData listItemData3"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              {item.model}
+                            </div>
+                            <div
+                              className="listItemData listItemData4"
+                              onClick={() => changeSelectedItemUrl(item.url)}
+                            >
+                              <div className="cardHamIcon listCardHamIcon">
+                                <MoreVertRoundedIcon></MoreVertRoundedIcon>
+                              </div>
                             </div>
                           </div>
                         </>
