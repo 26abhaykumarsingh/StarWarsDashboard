@@ -24,7 +24,7 @@
 }
 
 .Details.outOfView {
-  transform: translateX(-350px); /* Position the details in view */
+  transform: translateX(-4000px); /* Position the details in view */
   transition: transform 0.5s ease;
 }
 
